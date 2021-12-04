@@ -1,0 +1,31 @@
+1. HRM User Story with Data Providers
+
+    Scenario: As a User, I should not be able to login to HRM with invalid credentials
+    Given I’m on the login page
+    When I enter an invalid username and invalid  password
+    And I click on the login button
+    Then receive an error message
+
+    Note: Use at least 4 invalid credentials and apply DataProviders
+
+2. Homework - HRM User Story 4
+    Scenario: As an admin, I should be able to successfully add Contact Details
+    Given I’m logged in with Admin Account
+    And I click on the PIM → Employee List
+    Then I click on an employee name
+    I click on contact Details
+    Then I click on Edit and Fill out Address
+    Then I click on Save
+    And I verify the address is displayed
+
+3. Homework - HRM User Story 5
+    Scenario: As an admin, I should get salary range validation
+    Given I’m logged in with Admin Account
+    And I click on the PIM → Employee List
+    Then I click on an employee name
+    Then I click on the Salary tab
+    Then I click on Add button of Assigned Salary Components
+    I select values: Finance, Monthly, United States Dollars
+    And I entered a lower number than the minimum allowed salary
+    I should get an error message showing the number should be above the minimum
+
